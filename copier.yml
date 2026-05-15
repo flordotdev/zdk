@@ -20,3 +20,5 @@ mod_visibility:
     'Friends Only': 1
     'Private': 2
     'Unlisted': 3
+
+_subdirectory: template
