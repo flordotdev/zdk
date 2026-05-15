@@ -1,22 +1,22 @@
 mod_name:
   type: str
   help: What is your mod name?
-  default: My Mod
+  placeholder: My Mod
 
 mod_id:
   type: str
   help: What is your mod id?
-  default: MyMod
+  placeholder: MyMod
   validator: >-
-    {% if not (mod_id | regex_search('^[A-Z][a-z]+(?:[A-Z][a-z]+)*$')) %}
-    It's using incorrect casing, use PascalCase for mod id.
+    {% if not (mod_id | regex_search('^[A-Z][a-zA-Z0-9]*$')) %}
+    Use PascalCase for mod id (e.g. MyMod, MOD, Awesome67).
     {% endif %}
 
 mod_visibility:
   type: str
   help: What is your mod visibility?
   choices:
-    0: Public
-    1: Friends Only
-    2: Private
-    3: Unlisted
+    'Public': 0
+    'Friends Only': 1
+    'Private': 2
+    'Unlisted': 3
