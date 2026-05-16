@@ -1,12 +1,16 @@
 mod_name:
   type: str
   help: What is your mod name?
-  default: My Mod
+  placeholder: My Mod
+  validator: >-
+    {% if not (mod_name | trim) %}
+    Cannot be blank or contain only spaces
+    {% endif %}
 
 mod_id:
   type: str
   help: What is your mod id?
-  default: MyMod
+  placeholder: MyMod
   validator: >-
     {% if not (mod_id | regex_search('^[A-Z][a-zA-Z0-9]*$')) %}
     Use PascalCase for mod id (e.g. ExampleMod, GMOD, Awesome67).
